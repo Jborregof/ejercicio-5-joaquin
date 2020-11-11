@@ -4,20 +4,21 @@ const changeBackgroundButton = document.getElementById(
   "changeBackgroundButton"
 );
 
-changeBackgroundButton.addEventListener(
-  "click",
-  () => (changeBackgroundButton.style.backgroundColor = getRandomColor())
-);
+//funcion flecha getLetters que retorna el string de numeros y letras
+const getLetters = () => "0123456789ABCDEF";
 
-function getRandomColor() {
+//funcion flecha de getRandomColor que devuelve color
+const getRandomColor = () => {
   const letters = getLetters();
   let color = "#";
   for (var i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
-}
+};
 
-function getLetters() {
-  return "0123456789ABCDEF";
-}
+//Añadir el evento con funcion flecha
+changeBackgroundButton.addEventListener(
+  "click",
+  () => (changeBackgroundButton.style.backgroundColor = getRandomColor())
+);
